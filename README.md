@@ -31,6 +31,6 @@ Thaw runs a long poll for the SNS that was attachd to glacier's Initiate job. Th
 and upload to the results bucket--which it finds from the description passed into Glacier's `initiate_job()` 
 
 
-# Notes for Grader
+# Notes 
 
 The `run_gas.sh` need to be modified to include parent root directory 
