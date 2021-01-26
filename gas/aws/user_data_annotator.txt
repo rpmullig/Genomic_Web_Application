@@ -1,0 +1,8 @@
+#!/bin/bash -ex
+source /home/ubuntu/.virtualenvs/mpcs/bin/activate
+aws s3 cp s3://mpcs-students/rpmulligan/cp-rpmullig.zip /home/ubuntu/cp-rpmullig.zip
+unzip /home/ubuntu/cp-rpmullig.zip -d /home/ubuntu/
+chown -R ubuntu:ubuntu /home/ubuntu/cp-rpmullig/
+aws s3 cp s3://mpcs-resources/ssl /usr/local/src/ssl --recursive
+sudo chmod u+x /home/ubuntu/cp-rpmullig/gas/ann/run_ann.sh
+sudo -u ubuntu bash /home/ubuntu/cp-rpmullig/gas/ann/run_ann.sh &

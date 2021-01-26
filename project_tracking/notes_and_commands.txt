@@ -1,0 +1,19 @@
+
+reference: https://docs.google.com/document/d/1NlG1F0iqqmuHd0ZnTCAQWQFv_cRu4jE0MNdSb_OylUY/edit#
+
+
+# virtual environments installed with conda locally, and OS for AWS has workon command
+workon mpcs
+
+
+# to ssh into an instance (already crated rpmulligan.pem and setup key-agent previously)
+ssh -i ~/.ssh/rpmulligan.pem ubuntu@<AWS IPv4 public DNS>
+
+# new vim command for find and replace. I used for config.py
+:%s/search/replace/ # syntax -- reference here: https://www.linux.com/training-tutorials/vim-tips-basics-search-and-replace/
+:%s/<CNetID>/rpulligan/ # what I used for config.py
+
+# cache github credientials to speed up debugging with quicker pulls
+git config credential.helper 'cache [<options>]' # command syntax
+git config credential.helper 'cache --timeout=36000' # increase timeout time
+

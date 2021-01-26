@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# create gas web instance
+aws ec2 run-instances --image-id ami-0a595884b104a8698 --instance-type t2.nano --security-groups mpcs --key-name rpmulligan --iam-instance-profile Name="instance_profile_rpmulligan" --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=rpmulligan-gas-web}]'
+
+
+
+# create gas annotator instance
+aws ec2 run-instances --image-id ami-0a595884b104a8698 --instance-type t2.nano --security-groups mpcs --key-name rpmulligan --iam-instance-profile Name="instance_profile_rpmulligan" --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=rpmulligan-gas-ann}]'
+
+
+# create util instance 
+aws ec2 run-instances --image-id ami-0a595884b104a8698 --instance-type t2.nano --security-groups mpcs --key-name rpmulligan --iam-instance-profile Name="instance_profile_rpmulligan" --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=rpmulligan-gas-util}]'
+
+
+
+# create subdomains from ip addresses obtained above using mpcsdomain AWS route 55
+# due to time constraints I did this manually with lookup on AWS console instead of AWS Command Line
+#./mpcsdomain create --subdomain rpmulligan-gas-web --ip <IP_address>
+#./mpcsdomain create --subdomain rpmulligan-gas-ann --ip <IP_address>
+#./mpcsdomain create --subdomain rpmulligan-gas-util --ip <IP_address>
+
