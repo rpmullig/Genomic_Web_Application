@@ -33,14 +33,4 @@ and upload to the results bucket--which it finds from the description passed int
 
 # Notes for Grader
 
-All of my testing passed for the utilities, so if something does not work--please review the code for possible minor
-edge case error. I did not do any extra credit due to time constraints.
-
-The `project_tracking` is just a folder for personal use of this project later--it's not relevant to anything grading related.
-
-I had modified the code paths in `run_gas.sh` to include parent root directory `cp-rpmullig` and as such have saved only 
-one file in the s3 bucket used for autoscaling as `cp-rpmullig.zip`--Vas approved of this. 
-
-Please accept the commented print statements as guiding code comments as well--because I used them as such. 
-
-
+The `run_gas.sh` need to be modified to include parent root directory 
